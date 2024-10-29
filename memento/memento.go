@@ -3,7 +3,7 @@ package memento
 import "fmt"
 
 /*
-Memenoto is behavioral design patterns that allows you to capture and save the internal
+Memento is behavioral design patterns that allows you to capture and save the internal
 state of an object without exposing its details.
 The Memento patterns allows us to save and restore the state of a cricket game (like saving match
 situation for replay or undo functionality) without exposing
