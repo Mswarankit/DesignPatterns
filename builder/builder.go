@@ -1,7 +1,7 @@
 package builder
 
 /* Builder pattern seperates the construction of a complex object from its representation.
-Chaining method is used in builder methods */
+ */
 // CricketGame represents a cricket game configuration
 type CricketGame struct {
 	TeamName    string
