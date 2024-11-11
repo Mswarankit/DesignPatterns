@@ -52,7 +52,6 @@ func TestMultipleDecorators(t *testing.T) {
 
 	result := gameWithAll.Play()
 
-	// Check if all decorator features are present
 	expectedFeatures := []string{
 		"with commentary",
 		"with live statistics",

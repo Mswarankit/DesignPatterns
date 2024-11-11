@@ -2,13 +2,6 @@ package memento
 
 import "fmt"
 
-/*
-Memento is behavioral design patterns that allows you to capture and save the internal
-state of an object without exposing its details.
-The Memento patterns allows us to save and restore the state of a cricket game (like saving match
-situation for replay or undo functionality) without exposing
-*/
-
 // CricketGameState represents the state of a cricket match
 type CricketGameState struct {
 	Score        int

@@ -4,10 +4,8 @@ import "testing"
 
 func TestCricketGamePrototype(t *testing.T) {
 	originalGame := NewCricketGame(100, 2, 20, []string{"Virat Kohli |", "Rohit Sharma|"})
-	// Cline the original game
 	clonedgame := originalGame.Clone().(*CricketGame)
 	originalGame.Display()
-	// Test initial clone equality
 	if originalGame.Score != clonedgame.Score {
 		t.Errorf("Expected cloned score to be %d, got %d", originalGame.Score, clonedgame.Score)
 	}
@@ -27,10 +25,8 @@ func TestCricketGamePrototype(t *testing.T) {
 }
 
 func TestMultipleClones(t *testing.T) {
-	// Create template game
 	templateGame := NewCricketGame(0, 0, 0, []string{})
 
-	// Create multiple games from template
 	t20Game := templateGame.Clone().(*CricketGame)
 	t20Game.Overs = 20
 

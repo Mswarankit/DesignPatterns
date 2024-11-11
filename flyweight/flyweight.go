@@ -1,13 +1,5 @@
 package flyweight
 
-/*
-Flyweight pattern sstrips out the duplicate data that does not change and is required
-by multiple instances from an object, creates an independent flyweight, and allows
-multiple objects to share it, thereby saving memory and reducing the number of objects.
-
-
-*/
-
 // PlayerType represents the intrisic state of a cricket player
 type PlayerType struct {
 	role       string

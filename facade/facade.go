@@ -2,16 +2,6 @@ package facade
 
 import "fmt"
 
-/*
-Facade -> API This is facade interface of the module. Most codes use this interface use this interface to simplify access
-to the class.
-
-Facade patterns simplify complex systems by providing a unified interface,
-making it easier for clients to interact with subsystems. They enhance code
-readability and reduce dependencies, promoting better maintainability and
-scalability in software design.
-*/
-
 // Unified Maid interface
 type API interface {
 	Test() string

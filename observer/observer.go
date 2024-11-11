@@ -2,15 +2,6 @@ package observer
 
 import "fmt"
 
-/*
-Observer pattern is behavioral design patterns.
-One-to-many dependency between objects, allowing multiple
-observers to be notified changes in subjects state
-Subject -> CricketGame
-Observer -> Player and commentrator
-*/
-
-// Subject interface defines methods for managing observers
 type Subject interface {
 	RegisterObserver(o Observer)
 	RemoveObserver(o Observer)

@@ -2,37 +2,26 @@ package decorator
 
 import "fmt"
 
-/*
-The Decorator Pattern is a structural design pattern that allows for adding
-responsibility to objects dynamically without altering the original class
-structure. This pattern supports the Open/Closed Principle.
-*/
-
 // CricketGame interface defines the methods that any cricket game should implement.
 type CricketGame interface {
-	Play() string     // Method to start playing the game.
-	GetScore() string // Method to get the current score of the game.
+	Play() string
+	GetScore() string
 }
 
-// BasicCricketGame struct implements the CricketGame interface.
-// It holds the current score and number of overs.
 type BasicCricketGame struct {
 	score int // The current score of the game.
 }
 
-// NewBasicCricketGame initializes a new BasicCricketGame instance with default values.
 func NewBasicCricketGame() *BasicCricketGame {
 	return &BasicCricketGame{
 		score: 0,
 	}
 }
 
-// Play method simulates playing cricket and returns a string message.
 func (g *BasicCricketGame) Play() string {
 	return "Playing Cricket" // Basic message indicating the game is being played.
 }
 
-// GetScore method returns the current score in a formatted string.
 func (g *BasicCricketGame) GetScore() string {
 	return fmt.Sprintf("Score: %d", g.score) // Returns the current score.
 }
@@ -104,8 +93,8 @@ func (s *StatisticDecorator) GetScore() string {
 
 // LiveStreamingDecorator struct extends CricketGameDecorator to add live streaming details.
 type LiveStreamingDecorator struct {
-	CricketGameDecorator        // Embedding the base decorator to reuse its methods.
-	platform             string // The platform on which the game is being streamed.
+	CricketGameDecorator
+	platform string
 }
 
 // NewLiveStreamingDecorators initializes a new LiveStreamingDecorator for the specified game and platform.
@@ -118,10 +107,10 @@ func NewLiveStreamingDecorators(game CricketGame, platform string) *LiveStreamin
 
 // Play method overrides the Play method to indicate live streaming details.
 func (live *LiveStreamingDecorator) Play() string {
-	return live.game.Play() + fmt.Sprintf(" streaming live on %s", live.platform) // Adds streaming info to the play message.
+	return live.game.Play() + fmt.Sprintf(" streaming live on %s", live.platform)
 }
 
 // GetScore method overrides the GetScore method to indicate live watching option.
 func (live *LiveStreamingDecorator) GetScore() string {
-	return live.game.GetScore() + " - Watch live" // Adds a note for viewers to watch live.
+	return live.game.GetScore() + " - Watch live"
 }

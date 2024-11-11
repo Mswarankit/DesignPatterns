@@ -1,7 +1,5 @@
 package builder
 
-/* Builder pattern seperates the construction of a complex object from its representation.
- */
 // CricketGame represents a cricket game configuration
 type CricketGame struct {
 	TeamName    string

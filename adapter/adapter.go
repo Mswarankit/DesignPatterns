@@ -2,13 +2,6 @@ package adapter
 
 import "fmt"
 
-/*
-Adapter -> The adapter pattern is Structural Patterns.
-
-Adapter patterns allow incompatible interfaces to work together by converting one interface into another,
-enabling integration of diverse systems.
-*/
-
 // Cricket Interface is target interface common interface for all cricket games
 type CricketGame interface {
 	Play() string

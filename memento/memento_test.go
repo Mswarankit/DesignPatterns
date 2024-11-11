@@ -23,7 +23,6 @@ func TestCricketGameMemento(t *testing.T) {
 		t.Errorf("Current state incorrect, got score: %d, wicket: %d", currrentState.Score, currrentState.Wickets)
 	}
 
-	//Restore to first over state
 	firstOverState, err := caretaker.RestoreState(0)
 	if err != nil {
 		t.Errorf("Error restoring state: %v", err)
@@ -37,7 +36,6 @@ func TestCricketGameMemento(t *testing.T) {
 
 func TestInvalidStateRestore(t *testing.T) {
 	game := NewCricketGame()
-	// Will give me error because not assigned game part
 	_ = game.GetCurrentState()
 	caretaker := NewGameCareTaker()
 
