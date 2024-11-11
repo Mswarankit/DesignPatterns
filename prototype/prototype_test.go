@@ -3,10 +3,10 @@ package prototype
 import "testing"
 
 func TestCricketGamePrototype(t *testing.T) {
-	originalGame := NewCricketGame(100, 2, 20, []string{"Virat Kohli", "Rohit Sharma"})
+	originalGame := NewCricketGame(100, 2, 20, []string{"Virat Kohli |", "Rohit Sharma|"})
 	// Cline the original game
 	clonedgame := originalGame.Clone().(*CricketGame)
-
+	originalGame.Display()
 	// Test initial clone equality
 	if originalGame.Score != clonedgame.Score {
 		t.Errorf("Expected cloned score to be %d, got %d", originalGame.Score, clonedgame.Score)
@@ -14,7 +14,8 @@ func TestCricketGamePrototype(t *testing.T) {
 	clonedgame.Score = 150
 	clonedgame.Wickets = 4
 	clonedgame.Overs = 25
-	clonedgame.BatsmanNames = append(clonedgame.BatsmanNames, "Rishab Pant")
+	clonedgame.BatsmanNames = append(clonedgame.BatsmanNames, "Rishab Pant|")
+	clonedgame.Display()
 
 	if originalGame.Score != 100 {
 		t.Errorf("Expected original score to be 100, got %d", originalGame.Score)
